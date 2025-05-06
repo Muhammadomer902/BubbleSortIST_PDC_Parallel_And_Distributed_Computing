@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <assert.h>
+#include <time.h> // Added for performance analysis
 
 // Define maximum dimension and factorial for simplicity (adjust as needed)
 #define MAX_N 4
@@ -103,6 +104,10 @@ int main(int argc, char *argv[]) {
 
     // *** Requirement 1: Construct n-1 Independent Spanning Trees ***
     // The algorithm constructs n-1 ISTs, each rooted at the identity permutation (1,2,...,n).
+    
+    // Start timing the IST construction
+    clock_t start_time = clock();
+    
     for (int t = 0; t < n - 1; t++) { // For each tree t
         // *** Requirement 2: Sequential Execution ***
         // Process all vertices sequentially, computing parents for each vertex.
@@ -143,6 +148,10 @@ int main(int argc, char *argv[]) {
         }
     }
 
+    // End timing the IST construction
+    clock_t end_time = clock();
+    double elapsed_time = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+
     // *** Requirement 3: Achieve Time Complexity of O(n * n!) ***
     // The algorithm processes n! vertices across n-1 trees, with each vertex computation in O(n) due to inverse and swap operations.
 
@@ -151,6 +160,8 @@ int main(int argc, char *argv[]) {
     // This is implicit in the swap-based parent assignment.
 
     // Output results
+    printf("Time taken for IST construction: %.6f seconds\n", elapsed_time);
+
     printf("Independent Spanning Trees for B_%d:\n", n);
     for (int t = 0; t < n - 1; t++) {
         printf("Tree %d:\n", t + 1);
