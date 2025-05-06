@@ -42,15 +42,6 @@ Handles vertex cases based on the last symbol and tree index.
 
 It also aligns with the PDC project requirements by providing serial and parallel implementations, enabling scalability analysis, and supporting documentation.
 
-Repository Structure
-
-BubbleSortIST/
-├── src/
-│   ├── ist_bubble_sort.c          # MPI-based parallel implementation
-│   ├── ist_bubble_sort_serial.c   # Serial implementation
-├── README.md                      # Project documentation
-└── docs/
-    └── performance_analysis.md     # Placeholder for scalability analysis
 
 Prerequisites
 
