@@ -91,20 +91,20 @@ Installation
 
 Clone the Repository:
 
-git clone https://github.com/your-username/BubbleSortIST.git
+git clone https://github.com/Muhammadomer902/BubbleSortIST_PDC_Parallel_And_Distributed_Computing.git
 cd BubbleSortIST
 
 
 
 Compile the Serial Version:
 
-gcc src/ist_bubble_sort_serial.c -o ist_serial
+gcc ist_bubble_sort_serial.c -o ist_serial
 
 
 
 Compile the Parallel Version:
 
-mpicc src/ist_bubble_sort.c -o ist_mpi
+mpicc ist_bubble_sort.c -o ist_mpi
 
 Usage
 
